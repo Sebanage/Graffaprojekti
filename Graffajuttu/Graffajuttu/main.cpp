@@ -3,10 +3,10 @@
 #include <SDL\SDL.h>
 #include <GL\glew.h>
 #include <iostream>
-#include "Peli.h"
+#include "Game.h"
 
 int main(int argc, char** argv) {
-	Peli p;
+	Game p;
 	p.run();
 	
 	std::cout << "Debug console started\n";

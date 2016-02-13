@@ -12,10 +12,10 @@ public:
 	void draw();
 
 private:
-	int _x;
-	int _y;
-	int _width;
-	int _height;
+	float _x;
+	float _y;
+	float _width;
+	float _height;
 
 	//Gl unsigned int guaranteed to be 32 bits!
 	GLuint _vboID;

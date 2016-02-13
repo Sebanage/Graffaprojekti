@@ -1,7 +1,5 @@
 #include "Sprite.h"
 
-
-
 Sprite::Sprite()
 {
 	_vboID = 0;
@@ -53,7 +51,7 @@ void Sprite::init(float x, float y, float width, float height)
 	glBindBuffer(GL_ARRAY_BUFFER, _vboID);
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
-
+	
 	//unbind buffer
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
@@ -69,7 +67,8 @@ void Sprite::draw()
 
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 
-	glDisableVertexArrayAttrib(GL_ARRAY_BUFFER, 0);
+	//tässä tulee kaatuminen! Intel HD Graphics driver issue?
+	//glDisableVertexArrayAttrib(GL_ARRAY_BUFFER, 0);
 
 	//unbind buffer
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
