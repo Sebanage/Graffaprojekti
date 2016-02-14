@@ -119,15 +119,19 @@
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="GLSL.cpp" />
     <ClCompile Include="InputDevice.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="GLSL.h" />
+    <ClInclude Include="Errors.h" />
     <ClInclude Include="InputDevice.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Screen.h" />

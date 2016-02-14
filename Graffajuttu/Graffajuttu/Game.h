@@ -7,6 +7,7 @@
 #include "Screen.h"
 #include "Audio.h"
 #include "Sprite.h"
+#include "GLSL.h"
 
 //states of game
 enum class state {PLAY, EXIT};
@@ -21,6 +22,7 @@ public:
 
 private:
 	void init();
+	void initShaders();
 	void input();
 	void gameLoop();
 	void draw();
@@ -34,5 +36,7 @@ private:
 	state _state;
 
 	Sprite _sprite;
+
+	GLSL _colorProgram;
 };
 

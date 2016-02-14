@@ -1,6 +1,8 @@
 #include "Game.h"
 #include <iostream>
 #include <string>
+#include "Errors.h"
+
 
 void fatalError(std::string errorString) {
 	std::cout << errorString << std::endl;
@@ -55,6 +57,14 @@ void Game::init()
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	glClearColor(0.0f,0.0f,1.0f,1.0);
+
+	initShaders();
+}
+void Game::initShaders()
+{
+	_colorProgram.compileShader("Shaders/colorShading.vert", "Shaders/colorShading.frag");
+	_colorProgram.addAttribute("vertexPosition");
+	_colorProgram.linkShaders();
 }
 
 void Game::input()
@@ -86,7 +96,11 @@ void Game::draw()
 	//Bitwise "or" = call both!
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	_colorProgram.use();
+
 	_sprite.draw();
+
+	_colorProgram.unuse();
 
 	SDL_GL_SwapWindow(_window);
 
